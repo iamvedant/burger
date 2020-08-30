@@ -1,0 +1,59 @@
+.AdderBlock
+{
+    width: 50px;
+    display: inline-block;
+    margin-left: 10px;
+    text-align: center;
+}
+
+.Block
+{
+    background-color: rgb(230, 161, 13);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* display: inline-block; */
+    /* margin-left:50px; */
+    /* margin:0 auto; */
+}
+.btn
+{
+    margin: 2px;
+    outline: none;
+    width: 2em;
+    height: 2em;
+    border: none;
+    border-radius: 50%;
+    font-size: 20px;
+    background-color: black;
+    color: white;
+}
+.btn:disabled
+{
+    background-color:grey;
+}
+.btn:disabled:hover
+{
+    background-color:grey;
+    color: white;
+}
+#btnOne:hover{
+    background-color:green;
+    color: black;
+}
+.btn:hover
+{
+    color: black;
+    background-color: red;
+}
+
+.inp
+{
+    /* box-sizing: content-box; */
+    padding: 16px;
+    box-shadow:0 0 5px grey;
+    background-color: white;
+    font-size: 25px;
+    border-radius: 5px;
+
+}

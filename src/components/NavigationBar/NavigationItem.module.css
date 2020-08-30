@@ -1,0 +1,35 @@
+.ListItem
+{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    list-style: none;
+    height: 100%;
+    margin-left: 5px;
+    padding: 5px 10px;
+    /* margin: 0; */
+    /* padding: 10px; */
+    box-sizing: border-box;
+    /* border: solid 5px transparent; */
+    border-bottom:5px solid transparent;
+    
+}
+.ListItemTwo{
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    margin: none;
+    margin-top: 10px;
+    color: black;
+    /* width: 20px; */
+    /* width: 100%; */
+
+}
+
+.ListItem:hover,
+.ListItem.active{
+    
+    border:none;
+    background-color: rgb(255, 213, 122);
+    border-bottom:5px solid rgb(4, 202, 202);
+}

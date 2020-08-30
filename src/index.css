@@ -1,0 +1,19 @@
+body {
+  /* position: absolute; */
+  margin: 0;
+  padding: 0;
+  font-family: 'Open Sans', sans-serif;
+  /* backface-visibility: hidden; */
+}
+
+body::-webkit-scrollbar{
+  background-color: black;
+  /* border-radius: 10px; */
+}
+
+body::-webkit-scrollbar-thumb{
+  background-color: chocolate;
+  border-radius: 10px;
+  box-shadow: 0px 0px 5px rgba(210, 51, 30, 0.671);
+}
+

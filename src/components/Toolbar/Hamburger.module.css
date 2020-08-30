@@ -1,0 +1,16 @@
+.iconHolder{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 40%;
+    width: 40px;
+    /* background-color: white; */
+    cursor: pointer;
+}
+.line
+{
+    width: 100%;
+    height: 2px;
+    background-color: black;
+}
+

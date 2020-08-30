@@ -1,0 +1,87 @@
+.modalBox
+{
+    position: fixed;
+    z-index: 500;
+    /* margin-top: auto; */
+    /* left: 200px; */
+    background-color: white;
+    width: 35%;
+    height: 400px; 
+    border: 1px solid #ccc;
+    box-shadow: 0 0 7px grey;
+    padding: 16px;
+    left: 32.5%;
+    top: 20%;
+    animation-name: anim; 
+    animation-duration: 0.4s;
+    transition-duration: 0.2s;
+    animation-fill-mode: forwards;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+
+.flexDisp{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.disabledBox{
+    display: none;
+}
+.modalBox2
+{
+    position: fixed;
+    z-index: 500;
+    /* margin-top: auto; */
+    /* left: 200px; */
+    background-color: white;
+    width: 35%;
+    height: 400px;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 7px grey;
+    padding: 16px;
+    left: 32.5%;
+    top: 30%;
+    opacity: 0;
+    transform: scale(0);
+    /* transition-duration: 0.2s; */
+    animation-name: anim2;
+    animation-duration: 0.4s;
+    transition-duration: 1s;
+    animation-fill-mode: forwards;
+    backface-visibility: hidden;
+}
+@keyframes anim
+{
+    0%
+    {
+        transform: scale(0);
+        opacity: 0;
+    }
+
+    100%
+    {
+        transform: scale(1);
+        opacity: 1;
+    }
+    
+    
+}
+
+@keyframes anim2
+{
+    0%
+    {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    100%
+    {
+        transform: scale(0);
+        opacity: 0;
+    }
+    
+    
+}

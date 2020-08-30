@@ -1,0 +1,13 @@
+.Full{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 300;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(29, 27, 27, 0.445);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

@@ -1,0 +1,60 @@
+.Block
+{
+    margin: 10px auto;
+}
+.checkout:enabled
+{
+    margin-bottom: 10px;
+    background-color: rgb(149, 255, 123);
+    border: none;
+    padding: 20px;
+    border-radius: 10px;
+    animation-name: btnanim;
+    animation-duration: 0.2s;
+    cursor: pointer;
+    outline: none;
+
+}
+
+.checkout:disabled
+{
+    background-color: grey;
+    border: none;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    
+}
+
+@keyframes btnanim{
+    0%
+    {
+        transform: scale(1);
+    }
+
+    25%
+    {
+        transform: scale(1.1);
+    }
+
+    50%
+    {
+        transform: scale(1.2);
+    }
+
+    75%
+    {
+        transform: scale(1.1);
+    }
+
+    100%
+    {
+        transform: scale(1);
+    }
+}
+.checkoutHolder
+{
+    display: flex;
+    justify-content: center;
+    background-color: rgb(230, 161, 13);
+}

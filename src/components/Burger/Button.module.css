@@ -1,0 +1,21 @@
+.Button
+{
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+    margin-left:5px;
+    outline:none;
+    cursor: pointer;
+}
+
+.Danger
+{
+    color: red;
+    /* color: black; */
+}
+
+.continue
+{
+    color: forestgreen;
+    /* color: white; */
+}

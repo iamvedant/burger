@@ -1,0 +1,19 @@
+.Backdrop
+{
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    position: fixed;
+    z-index: 100;
+    top: 0%;
+    /* transform: translateY(0%); */
+    transition: 0.3s;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0,0,0,0.5);
+}
+/* .BackdropTwo
+{
+    transform: translateY(-100vh);
+    transition-duration: 0.3s;
+} */

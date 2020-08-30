@@ -1,0 +1,18 @@
+.ImageHolder{
+    height: 80%;
+    background-color: white;
+    width: 70px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    /* position: relative; */
+    /* left: 80px; */
+    /* padding: 5px 0; */
+}
+
+.Image{
+    height: 80%;
+    width: 80%;
+}
