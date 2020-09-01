@@ -1,0 +1,84 @@
+/* .input:not(:last-child){
+    margin-bottom: 20px;
+} */
+label{
+    width: 100%;
+    text-align: left;
+    position: relative;
+    left: 10px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+label:not(:last-child){
+    margin-bottom: 7px;
+}
+.input{
+    height: 40px;
+    box-sizing: border-box;
+    padding: 10px;
+    border: none;
+    border-bottom: 3px solid black;
+    border-radius: 5px;
+}
+
+.input:hover{
+    cursor: text;
+}
+
+.input:focus{
+    outline: none;
+}
+
+.input:valid{
+    border-bottom: 3px solid rgb(88, 187, 7);
+}
+
+.input:invalid{
+    border-bottom: 3px solid rgb(230, 54, 0);
+}
+
+.input:placeholder-shown{
+    border-bottom: 3px solid rgb(230, 161, 13);
+}
+
+
+label{
+    margin-top: 3px;
+    transform: translateY(-30px);
+    opacity: 0;
+    transition: 0.2s;
+}
+.input:not(:placeholder-shown)+label{
+    transform: translateY(0);
+    opacity: 1;
+}
+.formContainerHidden{
+    
+    width: 420px;
+    margin: 30px auto;
+    box-sizing: border-box;
+    padding: 40px;
+    border-radius: 10px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0;
+    transition: 0.3s;
+    z-index: 300;
+    background-color: white;
+    
+}
+
+.formContainerShown{
+    transform: translate(-50%, -55%) scale(1);
+    opacity: 1;
+    box-shadow: 10px 10px 20px black;
+}
+.flexDiv{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
