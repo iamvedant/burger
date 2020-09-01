@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import classes from './Layout.module.css'
 import Toolbar from '../Toolbar/Toolbar'
-import Aux from '../../hoc/Aux';
+import Aux from '../../hoc/Auxiliary';
 import Logo from '../Toolbar/Logo';
 import Navigation from '../NavigationBar/NavigationList';
 import Backdrop from '../Burger/Backdrop'
@@ -36,7 +36,6 @@ class layout extends Component
                 <NavList pass={true}>CheckOut</NavList>
             </Navigation>
             </SideDrawer>
-            <Logo></Logo>
             <Navigation>
                 <NavList active={true}>Burger Builder</NavList>
 

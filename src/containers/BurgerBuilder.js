@@ -10,6 +10,7 @@ import axios from "../axios-orders";
 import Spinner from "../components/UI/Spinner";
 
 import FullLoader from '../components/UI/FullLoader'
+// import Checkout from "../components/Checkout/Checkout";
 class BurgerBuilder extends Component {
   constructor(props) {
     super(props);
@@ -20,10 +21,7 @@ class BurgerBuilder extends Component {
       success: false,
       error: false,
     };
-
-    
   }
-  
   cost = {
     salad: 4,
     bacon: 20,
@@ -32,14 +30,18 @@ class BurgerBuilder extends Component {
   };
 
   componentDidMount() {
+    
     axios.get("/ingredients.json").then((response) => {
         console.log(response.data);
       this.setState({
         ingredients: { ...response.data},
+        submit: null
       });
       
     });
   }
+
+
 
   IngredientsAdder = (item) => {
     const newIngredients = this.state.ingredients;
@@ -50,45 +52,54 @@ class BurgerBuilder extends Component {
   };
 
   loadingStateChanger = () => {
-    this.setState({
-      loading: !this.state.loading,
-    });
+    // this.setState({
+    //   loading: !this.state.loading,
+    // });
 
-    axios
-      .post("/order.json", {
-        ingredients: { ...this.state.ingredients },
-        customerName: "Vedant Gupta",
-        deliverSpeed: "fastest",
-        Address: "83/2 Gandhi Gram",
-        modeOfPayment: "Online(Paid)",
-      })
-      .then((res) => {
-        this.setState({
-          loading: false,
-          success: true,
-        });
-        setTimeout(() => {
-          this.setState({
-            loading: false,
-            success: false,
-            submit: false,
-          });
-        }, 2000);
-      })
-      .catch((err) => {
-        this.setState({
-          loading: false,
-          success: false,
-          submit: true,
-          error: true,
-        });
-        setTimeout(() => {
-          this.setState({
-            submit: false,
-            error: false,
-          });
-        }, 2000);
-      });
+    // axios
+    //   .post("/order.json", {
+    //     ingredients: { ...this.state.ingredients },
+    //     customerName: "Vedant Gupta",
+    //     deliverSpeed: "fastest",
+    //     Address: "83/2 Gandhi Gram",
+    //     modeOfPayment: "Online(Paid)",
+    //   })
+    //   .then((res) => {
+    //     this.setState({
+    //       loading: false,
+    //       success: true,
+    //     });
+    //     setTimeout(() => {
+    //       this.setState({
+    //         loading: false,
+    //         success: false,
+    //         submit: false,
+    //       });
+    //     }, 2000);
+    //   })
+    //   .catch((err) => {
+    //     this.setState({
+    //       loading: false,
+    //       success: false,
+    //       submit: true,
+    //       error: true,
+    //     });
+    //     setTimeout(() => {
+    //       this.setState({
+    //         submit: false,
+    //         error: false,
+    //       });
+    //     }, 2000);
+    //   });
+
+
+    const queryParam = [];
+    for(let i of Object.keys(this.state.ingredients)){
+      queryParam.push(encodeURIComponent(i)+'='+encodeURIComponent(this.state.ingredients[i]))
+    }
+
+    this.props.history.push('/checkout?'+queryParam.join('&'))
+  
   };
 
   IngredientsRemover = (item) => {
@@ -157,6 +168,8 @@ class BurgerBuilder extends Component {
             ingredients={this.state.ingredients}
             cost={this.cost}
           />
+
+          {/* <Checkout></Checkout> */}
         </Aux>
       );
         }

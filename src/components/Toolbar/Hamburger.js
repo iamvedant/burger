@@ -1,12 +1,8 @@
 import React from 'react'
-import classes from './Hamburger.module.css'
+import Logo from './Logo'
 const hamburger=(props)=>{
     return(
-        <div onClick={props.clicked} className={classes.iconHolder}>
-            <div className={classes.line}></div>
-            <div className={classes.line}></div>
-            <div className={classes.line}></div>
-        </div>
+        <Logo clicked={props.clicked}></Logo>
     )
 }
 

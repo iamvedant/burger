@@ -1,24 +1,20 @@
-import React from 'react'
-import classes from './Button.module.css'
+import React from "react";
+import classes from "./Button.module.css";
 
-const classSelector=(btnType)=>{
-    if(btnType==='danger')
-    {
-        return classes.Danger;
-    }
-    else
-    if(btnType==='continue')
-    return classes.continue;
+const classSelector = (btnType) => {
+  if (btnType === "danger") {
+    return classes.Danger;
+  } else if (btnType === "continue") return classes.continue;
+  else return null;
+};
+const Button = (props) => {
+//   console.log(props)
+  const arr = [classes.Button, classSelector(props.btnType)];
+  return (
+      <button onClick={props.clicked} className={arr.join(' ')}>
+        {props.children}
+      </button>
+  );
+};
 
-    else
-    return null;
-}
-const button=(props)=>
-{
-    const arr=[classes.Button,classSelector(props.btnType)]
-    return(
-        <button onClick={props.clicked} className={arr.join(' ')}>{props.children}</button>
-    )
-}
-
-export default button;
+export default Button;

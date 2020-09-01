@@ -22,6 +22,9 @@ const TotalPrice=(cost,ingredients)=>
 
 const classNames = [classes.modalBox, classes.disabledBox];
 const giveClass=(isShown, classNames)=>{
+    if(isShown==null){
+        classNames[1]=classes.disabledBox
+    }
     if(isShown){
         classNames[1]=classes.modalBox2;
         return classNames[0];
@@ -84,7 +87,7 @@ const modal=(props)=>
                 <p><strong>Total Price: {String.fromCharCode(8377)+TotalPrice(props.cost,props.ingredients)}</strong></p>
                 <p>Continue To Checkout?</p>
                 <BUTTON clicked={props.cancelSubmit} btnType='danger'>BACK</BUTTON>
-                <BUTTON clicked={props.load} btnType='continue'>CONTINUE</BUTTON>
+                <BUTTON ingredients={props.ingredients} clicked={props.load} btnType='continue'>CONTINUE</BUTTON>
                 </div>
         </Aux>
         )
