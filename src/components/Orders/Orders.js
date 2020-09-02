@@ -12,6 +12,7 @@ class Orders extends Component{
     componentDidMount(){
 
         const storeOrders=[];
+       
         Axios.get('/order.json').then(
             (res)=>{
                 for(let i of Object.keys(res.data)){
@@ -35,7 +36,7 @@ class Orders extends Component{
         if(this.state.orders){
             order=this.state.orders.map((order, index)=>{
                 return(
-                <Order serial={index+1} key={order.id} ingredients={order.ingredients}></Order>)
+                <Order orderValue={order.amountPaid} serial={index+1} key={order.id} ingredients={order.ingredients}></Order>)
             })
         }
         return(

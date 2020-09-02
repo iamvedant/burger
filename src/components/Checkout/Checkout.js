@@ -54,46 +54,56 @@ class Checkout extends Component{
     this.setState({
         loading: true
     });
-      axios.post("/order.json", {
-        ingredients: { ...this.ingredients },
-        customerName: name,
-        deliverSpeed: "fastest",
-        Address: street,
-        ZipCode: zip,
-        modeOfPayment: "Online(Paid)",
-      })
-      .then((res) => {
-        this.setState({
-          loading: false,
-          success: true,
-        });
-        setTimeout(() => {
-          this.setState({
-            loading: false,
-            success: false,
-            checkout: false,
-          });
-          this.props.prevProps.history.replace('/');
-        }, 2000);
 
-        console.log("Placed Order")
-      })
+    axios.get("/price.json").then((price)=>{
+        let totalPrice = 0;
+        for(let i of Object.keys(this.ingredients)){
+            totalPrice+= (this.ingredients[i]*price.data[i])
+        }
+        axios.post("/order.json", {
+            ingredients: { ...this.ingredients },
+            customerName: name,
+            deliverSpeed: "fastest",
+            Address: street,
+            ZipCode: zip,
+            modeOfPayment: "Online(Paid)",
+            amountPaid: totalPrice
+          })
+          .then((res) => {
+            this.setState({
+              loading: false,
+              success: true,
+            });
+            setTimeout(() => {
+              this.setState({
+                loading: false,
+                success: false,
+                checkout: false,
+              });
+              this.props.prevProps.history.replace('/');
+            }, 2000);
+    
+            console.log("Placed Order")
+          })
+          
+          .catch((err) => {
+            // this.setState({
+            //   loading: false,
+            //   success: false,
+            //   submit: true,
+            //   error: true,
+            // });
+            // setTimeout(() => {
+            //   this.setState({
+            //     submit: false,
+            //     error: false,
+            //   });
+            // }, 2000);
+            console.log(err)
+          });
+
+    })
       
-      .catch((err) => {
-        // this.setState({
-        //   loading: false,
-        //   success: false,
-        //   submit: true,
-        //   error: true,
-        // });
-        // setTimeout(() => {
-        //   this.setState({
-        //     submit: false,
-        //     error: false,
-        //   });
-        // }, 2000);
-        console.log(err)
-      });
     }
     render(){
 

@@ -9,6 +9,9 @@
     box-sizing: border-box;
     border-radius: 20px;
     align-items: center;
+    animation-name: anim;
+    animation-fill-mode: forwards;
+    animation-duration: 0.7s;
 }
 
 .orderList{
@@ -41,4 +44,17 @@
     position: relative;
     top: 50%;
     transform: translateY(calc(-50% - 4px));
+    text-transform: capitalize;
+}
+
+@keyframes anim{
+    0%{
+        transform: scale(0);
+        opacity: 0;
+    }
+
+    100%{
+        transform: scale(1);
+        opacity: 1;
+    }
 }

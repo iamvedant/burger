@@ -20,7 +20,7 @@ class Order extends Component{
                     </ul>
 
                     <div>
-                        <h1>Amount Paid: $30</h1>
+                        <h1>Amount Paid: {String.fromCharCode(8377)+this.props.orderValue}</h1>
                     </div>
                 </div>
             </div>
