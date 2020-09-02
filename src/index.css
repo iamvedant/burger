@@ -8,12 +8,13 @@ body {
 
 body::-webkit-scrollbar{
   background-color: black;
+  width: 10px;
   /* border-radius: 10px; */
 }
 
 body::-webkit-scrollbar-thumb{
-  background-color: chocolate;
-  border-radius: 10px;
+  background-color: #04CACA;
+  /* border-radius: 10px; */
   box-shadow: 0px 0px 5px rgba(210, 51, 30, 0.671);
 }
 

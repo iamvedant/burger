@@ -22,6 +22,7 @@ class layout extends Component
         })
     }
     render(){
+        console.log(this.props)
         return(
     <Aux>
     
@@ -31,15 +32,15 @@ class layout extends Component
             <SideDrawer show={this.state.SideDrawer}>
                 <Logo pass={true}></Logo>
             <Navigation pass={true}>
-                <NavList pass={true} active={true}>Burger Builder</NavList>
+                <NavList path="/" pass={true} active={true}>Burger Builder</NavList>
 
-                <NavList pass={true}>CheckOut</NavList>
+                <NavList path="/orders" pass={true}>Orders</NavList>
             </Navigation>
             </SideDrawer>
             <Navigation>
-                <NavList active={true}>Burger Builder</NavList>
+                <NavList active={this.props.location.pathname==='/'} path="/">Burger Builder</NavList>
 
-                <NavList>CheckOut</NavList>
+                <NavList active={this.props.location.pathname==='/orders'} path="/orders">Orders</NavList>
             </Navigation>
             
         </Toolbar>

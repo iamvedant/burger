@@ -5,19 +5,22 @@ import BurgerBuilder from "./containers/BurgerBuilder";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Checkout from "./components/Checkout/Checkout";
 
+import Orders from './components/Orders/Orders'
+
 class App extends Component {
   render() {
     return (
       <div>
         <Router>
-        <Layout></Layout>
+        
           <Switch>
             <Route
               path="/checkout"
-              component={(props)=><Checkout prevProps={props}></Checkout>}
+              component={(props)=><Layout {...props}><Checkout prevProps={props}></Checkout></Layout>}
             ></Route>
-
-            <Route path="/" component={BurgerBuilder}></Route>
+            
+            <Route path="/orders" component={(props)=><Layout {...props}><Orders {...props}></Orders></Layout>}></Route>
+            <Route path="/" component={(props)=><Layout {...props}><BurgerBuilder {...props}></BurgerBuilder></Layout>}></Route>
           </Switch>
         </Router>
       </div>

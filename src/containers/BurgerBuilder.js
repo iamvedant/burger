@@ -32,7 +32,6 @@ class BurgerBuilder extends Component {
   componentDidMount() {
     
     axios.get("/ingredients.json").then((response) => {
-        console.log(response.data);
       this.setState({
         ingredients: { ...response.data},
         submit: null
@@ -131,6 +130,7 @@ class BurgerBuilder extends Component {
     this.setState({ submit: true });
   };
   render() {
+    console.log(this.props)
     let dock = (<FullLoader>
         <Spinner />
     </FullLoader>)

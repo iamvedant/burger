@@ -1,0 +1,44 @@
+.order{
+
+    box-shadow: 0 0px 10px grey;
+    display: flex;
+    /* flex-flow: row wrap; */
+    margin: 10px auto;
+    width: 90%;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 20px;
+    align-items: center;
+}
+
+.orderList{
+    list-style: none;
+    display: flex;
+    flex-flow: row wrap;
+    
+    /* height: 100%; */
+}
+
+.section{
+    display: flex;
+    /* flex-flow: column; */
+}
+
+.section div h1{
+   
+    padding-left: 40px;
+}
+.listItem:not(:last-child){
+    margin-right: 10px;
+}
+.listItem{
+    border-radius: 10px;
+    color: white;
+    background-color: black;
+    padding: 5px;
+    margin: 5px 0;
+    height: fit-content;
+    position: relative;
+    top: 50%;
+    transform: translateY(calc(-50% - 4px));
+}
